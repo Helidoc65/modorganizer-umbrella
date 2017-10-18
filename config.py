@@ -82,7 +82,7 @@ config = {
     'vc_platformtoolset': 'v140',
     'vc_CustomInstallPath': '',  # If you installed VC to a custom location put the full path here
     # eg. E:\Microsoft Visual Studio 14.0
-    'qt_CustomInstallPath': '',  # If you installed QT to a custom location put the full path here
+    'qt_CustomInstallPath': 'D:\MO2\Qt5',  # If you installed QT to a custom location put the full path here
     # eg. Z:\Dev\QT
     'build_type': "RelWithDebInfo",
     'offline': False,  # if set, non-mandatory network requests won't be made.
@@ -98,10 +98,10 @@ config = {
 
     'Main_Author': 'LePresidente',  # the current maintainer
     'Distrib_Author': 'TanninOne',  # the current distribution (and the original Author)
-    'Work_Author': 'Hugues92',  # yourself
+    'Work_Author': 'Helidoc65',  # yourself
 
     'qt_version': '5.9',  # currently evolving
-    'qt_minor_version': '1',  # place the qt minor version here if only it is not zero, otherwise leave blank
+    'qt_minor_version': '2',  # place the qt minor version here if only it is not zero, otherwise leave blank
     'pyqt_version': '5.9',  # pyqt version doesn't always match qt. So it is now a seperate config
     'openssl_version': '1.0.2L',  # changes often, so better to edit here
     'zlib_version': '1.2.11',  # changes often, so better to edit here
@@ -109,7 +109,7 @@ config = {
     'boost_version': '1.64.0',  # for -DBOOST_ROOT, also, it is either to change from here
     'vc_version_for_boost': '14.0',  # boost 1.63 does not support VS 2017 yet
     'python_version': '2.7',  # used below and in python.py
-    'python_version_minor': '.13',  # used in python.py
+    'python_version_minor': '.14',  # used in python.py
     'icu_version': '59',  # used in PyQt5
     'icu_version_minor': '1',  # for consistency
     'WixToolSet_Version_Binary': '311',  # Wix Binary Version
@@ -120,7 +120,7 @@ config['paths'] = {
     'build': "{base_dir}\\{build_dir}",
     'progress': "{base_dir}\\{progress_dir}",
     'install': "{base_dir}\\{install_dir}",
-#   'graphviz': path_or_default("dot.exe", "Graphviz2.38", "bin"),
+    'graphviz': path_or_default("dot.exe", "Graphviz2.38", "bin"),
     'cmake': path_or_default("cmake.exe", "CMake", "bin"),
     'git': path_or_default("git.exe", "Git", "bin"),
     'perl': path_or_default("perl.exe", "StrawberryPerl", "bin"),

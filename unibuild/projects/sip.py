@@ -29,7 +29,7 @@ from unibuild import Project
 from unibuild.modules import sourceforge, build
 
 sip_version = "4.19.3"
-python_version = config.get('python_version', "2.7") + config.get('python_version_minor', ".13")
+python_version = config.get('python_version', "2.7") + config.get('python_version_minor', ".14")
 
 
 def sip_environment():

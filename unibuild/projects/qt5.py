@@ -29,7 +29,7 @@ from unibuild.modules import build, git, urldownload
 qt_download_url = "http://download.qt.io/official_releases/qt"
 qt_download_ext = "tar.gz"
 qt_version = config['qt_version']
-qt_version_minor = "1"
+qt_version_minor = "2"
 if config['prefer_binary_dependencies']:
     qt_inst_path = config["paths"]["qt_binary_install"]
 else:

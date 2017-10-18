@@ -26,7 +26,7 @@ from unibuild.modules import github, msbuild, build, urldownload
 from unibuild.project import Project
 from unimake import get_visual_studio_2017_or_more
 
-python_version = config.get('python_version', "2.7") + config.get('python_version_minor', ".12")
+python_version = config.get('python_version', "2.7") + config.get('python_version_minor', ".14")
 python_toolset = config.get('vc_platformtoolset', "v140")
 python_url = "https://www.python.org/ftp/python"
 

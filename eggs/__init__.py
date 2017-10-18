@@ -36,9 +36,14 @@ for dep in ["decorator", "lxml", "PyYAML", "six", "jinja2", "psutil", "patch", "
 """ neither of these work. particularly building pygraphviz requires a specific VC version in a specific location
 
 
-for dep in ["pygraphviz"]:
-    pip.main(["install", "--install-option=\"--prefix={}\"".format(path), dep])
-
+for dep in ['pygraphviz']:
+    destpath = '{0}/{1}'.format(path, dep)
+    if not os.path.exists(destpath):
+        pip.main(['install',
+                 "--include-path=D:\MO2\Graphviz2.38\include\graphviz",
+                 "--library-path=D:\MO2\Graphviz2.38\lib",
+                 '--target={0}'.format(destpath), dep])	
+pip install --global-option=build_ext --global-option="-IC:\Program Files\Graphviz2.38\include" --global-option="-LC:\Program Files\Graphviz2.38\lib\release\lib" pygraphviz
 
 for dep in ["https://pypi.python.org/packages/source/p/pygraphviz/pygraphviz-1.3.1.tar.gz"]:
     basename = os.path.basename(dep)

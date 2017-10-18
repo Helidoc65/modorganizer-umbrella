@@ -211,7 +211,7 @@ def visual_studio_environment():
 
 
 def get_qt_install(qt_version, qt_minor_version, vc_version):
-    res = ""
+    res = False
     # We only use the 64bit version of QT in MO2 so this should be fine.
 
     try:
@@ -221,17 +221,21 @@ def get_qt_install(qt_version, qt_minor_version, vc_version):
                              "msvc{0}_64".format(vc_year(vc_version)))
             f = os.path.join(p, "bin", "qmake.exe")
             if os.path.isfile(f):
+                res = True
                 return os.path.realpath(p)
+            else:
+                res = False
     except:
-        res = None
+        res = False
 
     # We should try the custom VC install path as well
-    if res is None:
+    if res != True:
         try:
             p = os.path.join(config['qt_CustomInstallPath'], "{}".format(qt_version + "." + qt_minor_version
                                                                          if qt_minor_version != '' else qt_version),
                              "msvc{0}_64".format(vc_year(vc_version)))
             f = os.path.join(p, "bin", "qmake.exe")
+            logging.error(f)
             if os.path.isfile(f):
                 return os.path.realpath(p)
         except:
